@@ -9,3 +9,4 @@
 - [2026-03-20 12:36:32] feat(feature/work-service-impl): implement part 1 by Shanmuk <shanmukarao@gmail.com>
 - [2026-03-21 12:36:32] feat(feature/work-service-impl): implement part 2 by Vikram <eswardevai@gmail.com>
 - [2026-03-22 12:36:32] feat(feature/work-service-impl): implement part 3 by Gayathri Deevi <n181056@rguktn.ac.in>
+- [2026-03-24 12:36:33] feat(feature/dashboard-ui): implement part 1 by Shanmuk <shanmukarao@gmail.com>
