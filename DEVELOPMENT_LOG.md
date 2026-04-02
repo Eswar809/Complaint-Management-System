@@ -16,3 +16,4 @@
 - [2026-03-29 12:36:34] fix(fix/db-connection): resolve issue part 2 by Vikram <eswardevai@gmail.com>
 - [2026-03-30 12:36:34] fix(fix/db-connection): resolve issue part 3 by Gayathri Deevi <n181056@rguktn.ac.in>
 - [2026-04-01 12:36:35] feat(feature/api-endpoints): implement part 1 by Shanmuk <shanmukarao@gmail.com>
+- [2026-04-02 12:36:35] feat(feature/api-endpoints): implement part 2 by Vikram <eswardevai@gmail.com>
