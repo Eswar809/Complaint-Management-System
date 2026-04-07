@@ -20,3 +20,4 @@
 - [2026-04-03 12:36:35] feat(feature/api-endpoints): implement part 3 by Gayathri Deevi <n181056@rguktn.ac.in>
 - [2026-04-05 12:36:36] feat(feature/testing-suite): implement part 1 by Shanmuk <shanmukarao@gmail.com>
 - [2026-04-06 12:36:36] feat(feature/testing-suite): implement part 2 by Vikram <eswardevai@gmail.com>
+- [2026-04-07 12:36:36] feat(feature/testing-suite): implement part 3 by Gayathri Deevi <n181056@rguktn.ac.in>
