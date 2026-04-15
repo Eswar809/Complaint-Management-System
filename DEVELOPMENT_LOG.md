@@ -26,3 +26,4 @@
 - [2026-04-11 12:36:37] fix(fix/cors-issues): resolve issue part 3 by Gayathri Deevi <n181056@rguktn.ac.in>
 - [2026-04-13 12:36:37] feat(feature/logging-setup): implement part 1 by Shanmuk <shanmukarao@gmail.com>
 - [2026-04-14 12:36:38] feat(feature/logging-setup): implement part 2 by Vikram <eswardevai@gmail.com>
+- [2026-04-15 12:36:38] feat(feature/logging-setup): implement part 3 by Gayathri Deevi <n181056@rguktn.ac.in>
