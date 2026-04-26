@@ -2,6 +2,15 @@
 
 A full-stack application built to manage user complaints efficiently. It includes a robust Spring Boot backend and a dynamic React.js frontend.
 
+## 🏗️ System Architecture
+
+![System Architecture Diagram](System%20Architecture%20Diagram.jpg)
+
+The application follows a standard client-server, three-tier architecture:
+1. **Presentation Layer (Frontend)**: Developed with React.js, it offers a responsive and interactive user interface. It communicates with the backend asynchronously using RESTful APIs.
+2. **Application Layer (Backend)**: Powered by Spring Boot, this layer is responsible for core business logic, API request handling, and data validation. It is structured into Controllers (handling HTTP requests), Services (executing business rules), and Repositories (managing data access).
+3. **Data Access Layer (Database)**: A MySQL relational database is utilized to persistently store user profiles, complaint records, and system data. Spring Data JPA (backed by Hibernate) acts as the ORM, seamlessly mapping Java objects to database tables.
+
 ## 🛠️ Tech Stack
 
 ### Frontend (User Interface)
@@ -18,12 +27,17 @@ A full-stack application built to manage user complaints efficiently. It include
 ### Database
 - **MySQL**: Relational database used for storing user and complaint data.
 
-## ⚙️ Workflow
+## ⚙️ Workflow & Sequence
 
-1. **Filing a Complaint / Registration**: Users can register complaints. Once data is entered on the frontend, the React app sends it to the Spring Boot backend via REST APIs.
-2. **Data Processing**: Controllers in the backend receive the request and pass it to the Service layer for business logic execution.
-3. **Data Storage**: The Service layer uses Spring Data JPA Repositories to save the processed data into the MySQL database.
-4. **Fetching Data**: Whenever a user views the list of complaints or updates them, the frontend fetches the required data from the backend and displays it in the React UI.
+![Sequence Diagram](sequence_diagram.jpg)
+
+The system operates on a clean, request-response lifecycle:
+
+1. **User Interaction**: Users register or file a complaint via the React frontend. The UI captures the data, performs initial client-side validation, and constructs a JSON payload.
+2. **API Communication**: The frontend transmits the payload via an HTTP POST/GET request to the designated Spring Boot endpoint.
+3. **Business Processing**: The Backend Controller receives the HTTP request and delegates it to the Service layer. The Service layer applies necessary business logic and data transformations.
+4. **Database Persistence**: The Service invokes the JPA Repository to save or retrieve entities. The Repository translates these interactions into SQL queries executed against the MySQL database.
+5. **UI Update**: Once the database transaction is complete, the backend returns a standardized JSON response to the frontend, which dynamically updates the view to reflect the success or failure of the operation.
 
 ## 🚀 How to Run the Project Locally
 
