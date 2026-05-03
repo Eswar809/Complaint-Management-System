@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.eswardev.cms.model_bean.User;
 import com.eswardev.cms.service.UserService;
 
-@CrossOrigin("*")
 @RestController
 //Combination of Controller and ResponseBody
 //Controller: make a class spring mvc class

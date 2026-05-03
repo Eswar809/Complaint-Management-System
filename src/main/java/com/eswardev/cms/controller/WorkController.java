@@ -19,7 +19,6 @@ import com.eswardev.cms.model_bean.Work;
 import com.eswardev.cms.service.WorkService;
 
 @RestController
-@CrossOrigin("*")
 @RequestMapping("/api/work")
 public class WorkController {
 	private WorkService workService;
