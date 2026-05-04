@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import WorkService from '../Services/WorkService'
 import { Link } from 'react-router-dom'
 import {IoIosAddCircle} from 'react-icons/io'
-import {FaSearch} from 'react-icons/fa'
+import {FaSearch, FaDownload} from 'react-icons/fa'
 import {FcViewDetails} from 'react-icons/fc'
 import Swal from "sweetalert2";
 
@@ -43,6 +43,24 @@ const ListWorkComponent = () => {
       })
   }
 
+  const exportToCSV = () => {
+    const headers = ['Work id', 'Id Name', 'Date Created'];
+    const csvRows = [];
+    csvRows.push(headers.join(','));
+    
+    work.forEach(w => {
+      csvRows.push([w.id, w.idName, w.dateCreated].join(','));
+    });
+    
+    const csvString = csvRows.join('\n');
+    const blob = new Blob([csvString], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'work_list.csv';
+    link.click();
+  };
+
   return (
     <div className='container'><br/>
         <h2 className='text-center'>List of Work</h2>
@@ -64,9 +82,14 @@ const ListWorkComponent = () => {
           </div>
           {/* <Link to={`/search-work/idName/${idName}`} className='btn btn-search'>Search By Id Name</Link> */}
         </form><br/>
-        <a href='/create-work'>
-          <IoIosAddCircle size='60px' color='green' className='add-icon'/>
-        </a>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <a href='/create-work'>
+            <IoIosAddCircle size='60px' color='green' className='add-icon'/>
+          </a>
+          <button className='btn btn-success' onClick={exportToCSV}>
+            <FaDownload /> Export to CSV
+          </button>
+        </div>
         <table className='table table-border table-striped'>
             <thead>
                 <th>Work id</th>
