@@ -83,5 +83,15 @@ This document tracks the code reviews conducted as part of the structured branch
 - [x] Dockerfile is minimal and multi-stage build saves a lot of space.
 - [x] `docker-compose.yml` cleanly orchestrates the app and db containers.
 
+## Review for `feature/frontend-csv-export`
+**Author:** Frontend Developer
+**Reviewer:** Gayathri Deevi
+**Status:** Approved
+**Comments:**
+- [x] Successfully integrated an "Export to CSV" button in the `ListWorkComponent`.
+- [x] Used the native `Blob` API to construct the file entirely on the client-side, avoiding unnecessary backend calls.
+- [x] Utilized `URL.createObjectURL()` effectively to prompt the browser download.
+- [x] *Action item:* Consider adding `URL.revokeObjectURL(url)` immediately after the `.click()` event to prevent potential memory leaks in long-running sessions.
+
 ---
 **Summary:** Managed 30+ commits across 10 branches with proper code reviews. The team performed excellently with no major regressions.

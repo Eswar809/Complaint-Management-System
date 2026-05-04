@@ -8,6 +8,8 @@ I developed a full-stack Complaint Management System designed to handle user gri
 **What Broke & What I Figured Out:**  
 During the integration phase, frontend requests from `http://localhost:3000` to the backend at `http://localhost:9000` were consistently blocked by CORS policy errors. This occurred because the initial approach of using overly permissive `@CrossOrigin("*")` annotations scattered across controllers was both inadequate and insecure for production-like environments. Additionally, I faced instant failures in the CI/CD pipelines due to a JDK version mismatch—the runners defaulted to JDK 11, while our Spring Boot 3.1.0 build required JDK 17. By centralizing the CORS policy into a dedicated `WebMvcConfigurer` bean and explicitly upgrading the CI runner configurations to JDK 17, I resolved both issues. This experience heavily reinforced the critical importance of centralized security configurations and strict environment parity in enterprise deployments.
 
+Additionally, introducing the **Export to CSV** feature required generating tabular data strictly on the frontend to minimize backend load. The challenge was converting JSON API responses directly into a downloadable CSV structure within the browser. I utilized JavaScript's native `Blob` object and `URL.createObjectURL()` to construct the file dynamically on the client side. This approach elegantly bypassed the need for dedicated server-side file generation and optimized the network bandwidth.
+
 ## 🏗️ System Architecture
 
 ![System Architecture Diagram](System%20Architecture%20Diagram.jpg)
